@@ -2,9 +2,12 @@
 
 {% block content%}
 <hr>
-<div class="row">
-    <div class="col">
+<div class="row text-center d-flex justify-content-center">
+    <div class="col-md-11 col-centered">
+        <br>
         <h1>Product</h1>
+
+        <hr>
         <table class="table table-striped table-dark">
               <thead>
                 <tr>
@@ -15,12 +18,14 @@
                 </tr>
               </thead>
              <tbody>
+                {% for p in products %}
                 <tr>
 
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>{{p.name}}</td>
+                  <td>{{p.category}}</td>
+                  <td>{{p.price}}</td>
                 </tr>
+                {% endfor %}
 
              </tbody>
 </table>

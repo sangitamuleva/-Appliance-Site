@@ -1,0 +1,42 @@
+{% extends "Accounts/main.html" %}
+{%load static%}
+{% block content %}
+
+<div class="mt-5">
+    {% include 'Accounts/status.html'%}
+    <br>
+    <div class="col-md-12 text-center">
+        <h3>Last Order</h3>
+
+
+        <hr>
+        <div class="card card-body">
+            <table class="table table-sm">
+                <thead>
+                <tr>
+
+                    <th scope="col">Product</th>
+                    <th scope="col">Date Ordered</th>
+                    <th scope="col">Status</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for o in orders %}
+                <tr>
+                    <td>{{o.product}}</td>
+                    <td>{{o.date_created}}</td>
+                    <td>{{o.status}}</td>
+
+                </tr>
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+{%endblock%}
